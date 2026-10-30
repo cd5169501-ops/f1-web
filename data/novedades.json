@@ -1,0 +1,30 @@
+{
+  "actualizadoUTC": "2026-10-30T12:00:00Z",
+  "novedades": [
+    {
+      "fecha": "2026-10-30",
+      "titulo": "Calendario 2026 cargado",
+      "texto": "Las 23 fechas de la temporada ya están en la web, con todos los horarios convertidos a hora argentina."
+    },
+    {
+      "fecha": "2026-10-30",
+      "titulo": "México abre el fin de semana",
+      "texto": "La primera práctica del GP de México arranca hoy a las 15:30 (hora argentina)."
+    },
+    {
+      "fecha": "2026-10-28",
+      "titulo": "Seis fines de semana con sprint",
+      "texto": "China, Miami, Canadá, Gran Bretaña, Países Bajos y Singapur suman clasificación sprint y carrera sprint."
+    },
+    {
+      "fecha": "2026-10-27",
+      "titulo": "Avisos en camino",
+      "texto": "En la Etapa 2 se suman las notificaciones por ntfy y los mails de Gmail antes de cada sesión."
+    },
+    {
+      "fecha": "2026-10-04",
+      "titulo": "Cambios en el calendario",
+      "texto": "El GP de Arabia Saudita fue cancelado y el GP de Baréin se disputó en Sepang: la temporada quedó con 23 carreras."
+    }
+  ]
+}

@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>F1 Calendario 2026 · Hora argentina</title>
+  <meta name="description" content="Todas las sesiones de la temporada 2026 de Fórmula 1: prácticas, clasificación y carrera, en hora argentina. Con cuenta regresiva y estado en vivo.">
+  <meta name="theme-color" content="#e10600">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="F1 2026">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="F1 Calendario 2026 · Hora argentina">
+  <meta property="og:description" content="Prácticas, clasificación y carrera de las 23 fechas de la temporada 2026, en hora argentina.">
+  <meta property="og:locale" content="es_AR">
+
+  <style>
+    /* ============================================================
+       Variables y base
+       ============================================================ */
+    :root {
+      --fondo: #07070a;
+      --panel: #0f0f14;
+      --panel-alto: #15151c;
+      --borde: #26262f;
+      --borde-suave: #1c1c24;
+      --texto: #f4f4f6;
+      --suave: #9d9dab;
+      --tenue: #858592;
+      --rojo: #e10600;
+      --rojo-claro: #ff4a3d;
+      --radio: 18px;
+      --ancho: 1120px;
+      --transicion: 160ms ease;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--texto);
+      background:
+        radial-gradient(900px 520px at 12% -10%, rgba(225, 6, 0, .16), transparent 60%),
+        radial-gradient(700px 420px at 100% 0%, rgba(120, 0, 0, .10), transparent 60%),
+        var(--fondo);
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    button { font: inherit; }
+
+    [hidden] { display: none !important; }
+
+    :focus-visible {
+      outline: 2px solid var(--rojo-claro);
+      outline-offset: 3px;
+    }
+
+    .contenedor {
+      width: min(var(--ancho), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .saltar {
+      position: absolute;
+      left: 12px;
+      top: -60px;
+      z-index: 100;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--rojo);
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      transition: top var(--transicion);
+    }
+
+    .saltar:focus { top: 12px; }
+
+    /* ============================================================
+       Cabecera
+       ============================================================ */
+    .cabecera {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(7, 7, 10, .82);
+      border-bottom: 1px solid var(--borde-suave);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .cabecera__fila {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      min-height: 64px;
+    }
+
+    .marca {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .marca__icono {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: var(--rojo);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: -.06em;
+      box-shadow: 0 0 24px rgba(225, 6, 0, .45);
+    }
+
+    .marca__texto {
+      color: var(--suave);
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    .marca__texto strong { color: var(--texto); }
+
+    .nav {
+      display: flex;
+      gap: 4px;
+      margin-left: auto;
+    }
+
+    .nav a {
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: var(--suave);
+      font-size: .86rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color var(--transicion), background var(--transicion);
+    }
+
+    .nav a:hover {
+      color: var(--texto);
+      background: rgba(255, 255, 255, .05);
+    }
+
+    .reloj {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 10px;
+      border: 1px solid var(--borde-suave);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .02);
+      color: var(--texto);
+      font-size: .78rem;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .reloj__punto {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--rojo);
+    }
+
+    .reloj__zona {
+      color: var(--tenue);
+      font-size: .64rem;
+      letter-spacing: .1em;
+    }
+
+    /* ============================================================
+       Hero + cuenta regresiva
+       ============================================================ */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+      gap: 34px;
+      align-items: center;
+      padding-top: 58px;
+      padding-bottom: 26px;
+    }
+
+    .etiqueta {
+      margin: 0 0 10px;
+      color: var(--rojo-claro);
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 5.4vw, 4.3rem);
+      font-weight: 900;
+      line-height: .94;
+      letter-spacing: -.045em;
+    }
+
+    h1 .anio { color: var(--rojo); }
+
+    .hero__bajada {
+      max-width: 44ch;
+      margin: 18px 0 0;
+      color: var(--suave);
+      font-size: 1rem;
+    }
+
+    .stats {
+      display: flex;
+      gap: 26px;
+      margin: 26px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .stats li {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .stats strong {
+      font-size: 1.45rem;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+
+    .stats span {
+      color: var(--tenue);
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .boton-instalar {
+      margin-top: 24px;
+      padding: 10px 16px;
+      border: 1px solid var(--borde);
+      border-radius: 10px;
+      background: var(--panel-alto);
+      color: var(--texto);
+      font-size: .82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: border-color var(--transicion), background var(--transicion);
+    }
+
+    .boton-instalar:hover {
+      border-color: var(--rojo);
+      background: #1b1b23;
+    }
+
+    .proxima {
+      position: relative;
+      overflow: hidden;
+      padding: 24px;
+      border: 1px solid var(--borde);
+      border-radius: 24px;
+      background: linear-gradient(150deg, #181820, #0c0c11 62%);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .05);
+    }
+
+    .proxima::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 230px;
+      height: 230px;
+      background-image: repeating-conic-gradient(rgba(255, 255, 255, .055) 0 25%, transparent 0 50%);
+      background-size: 22px 22px;
+      transform: rotate(10deg);
+      -webkit-mask-image: radial-gradient(circle at top right, #000, transparent 70%);
+      mask-image: radial-gradient(circle at top right, #000, transparent 70%);
+      pointer-events: none;
+    }
+
+    .proxima--vivo {
+      border-color: rgba(255, 74, 61, .65);
+      box-shadow: 0 0 0 1px rgba(225, 6, 0, .18), 0 30px 80px rgba(225, 6, 0, .18);
+    }
+
+    .proxima__cab {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      color: var(--rojo-claro);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .punto-vivo {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--rojo);
+      flex: none;
+    }
+
+    .proxima--vivo .punto-vivo {
+      animation: pulso 1.6s infinite;
+    }
+
+    .proxima__ronda {
+      margin-left: auto;
+      padding: 3px 8px;
+      border: 1px solid var(--borde);
+      border-radius: 999px;
+      color: var(--suave);
+      font-size: .64rem;
+      letter-spacing: .08em;
+    }
+
+    .proxima h2 {
+      position: relative;
+      margin: 0;
+      font-size: clamp(1.5rem, 2.6vw, 1.9rem);
+      font-weight: 850;
+      letter-spacing: -.02em;
+      line-height: 1.15;
+    }
+
+    .proxima__gp {
+      position: relative;
+      margin: 8px 0 0;
+      color: var(--texto);
+      font-size: .92rem;
+      font-weight: 600;
+    }
+
+    .proxima__fecha {
+      position: relative;
+      margin: 4px 0 0;
+      color: var(--tenue);
+      font-size: .84rem;
+    }
+
+    .cuenta {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .cuenta__bloque {
+      padding: 10px 6px;
+      border: 1px solid var(--borde-suave);
+      border-radius: 12px;
+      background: rgba(0, 0, 0, .35);
+      text-align: center;
+    }
+
+    .cuenta__bloque span {
+      display: block;
+      font-size: clamp(1.55rem, 3.1vw, 2rem);
+      font-weight: 850;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -.03em;
+      line-height: 1;
+    }
+
+    .cuenta__bloque small {
+      display: block;
+      margin-top: 5px;
+      color: var(--tenue);
+      font-size: .58rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .cuenta__label {
+      position: relative;
+      margin: 0 0 -8px;
+      color: var(--tenue);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* ============================================================
+       Secciones
+       ============================================================ */
+    .seccion {
+      padding: 52px 0;
+      scroll-margin-top: 84px;
+    }
+
+    .seccion__cab {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .seccion__cab h2 {
+      margin: 0;
+      font-size: clamp(1.55rem, 3vw, 2.05rem);
+      font-weight: 850;
+      letter-spacing: -.03em;
+    }
+
+    .seccion__cab .etiqueta { margin-bottom: 6px; }
+
+    .nota-datos {
+      margin: 10px 0 0;
+      color: var(--tenue);
+      font-size: .78rem;
+    }
+
+    .filtros {
+      display: inline-flex;
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid var(--borde-suave);
+      border-radius: 999px;
+      background: var(--panel);
+    }
+
+    .filtros button {
+      padding: 8px 14px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--suave);
+      font-size: .78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: color var(--transicion), background var(--transicion);
+    }
+
+    .filtros button:hover { color: var(--texto); }
+
+    .filtros button[aria-pressed="true"] {
+      background: var(--rojo);
+      color: #fff;
+    }
+
+    /* Chips de rondas */
+    .rondas {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 2px 2px 12px;
+      margin-bottom: 18px;
+      scrollbar-width: thin;
+      scrollbar-color: #2a2a35 transparent;
+    }
+
+    .rondas::-webkit-scrollbar { height: 6px; }
+    .rondas::-webkit-scrollbar-thumb { background: #2a2a35; border-radius: 99px; }
+
+    .ronda-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      flex: none;
+      padding: 7px 10px;
+      border: 1px solid var(--borde);
+      border-radius: 10px;
+      background: var(--panel);
+      color: var(--suave);
+      font-size: .72rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: border-color var(--transicion), color var(--transicion), background var(--transicion);
+    }
+
+    .ronda-chip:hover {
+      color: var(--texto);
+      border-color: #3a3a46;
+    }
+
+    .ronda-chip__num {
+      color: var(--tenue);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .ronda-chip[data-estado="proxima"] {
+      border-color: rgba(225, 6, 0, .5);
+      color: var(--texto);
+    }
+
+    .ronda-chip[data-estado="en-vivo"] {
+      border-color: var(--rojo);
+      background: rgba(225, 6, 0, .16);
+      color: #fff;
+    }
+
+    .ronda-chip[data-estado="pasada"] {
+      border-color: var(--borde-suave);
+      background: transparent;
+    }
+
+    /* ============================================================
+       Tarjetas de Gran Premio
+       ============================================================ */
+    .lista-gp {
+      display: grid;
+      gap: 14px;
+    }
+
+    .cargando {
+      margin: 0;
+      padding: 28px;
+      border: 1px dashed var(--borde);
+      border-radius: var(--radio);
+      color: var(--tenue);
+      text-align: center;
+      font-size: .88rem;
+    }
+
+    .gp {
+      overflow: hidden;
+      border: 1px solid var(--borde-suave);
+      border-radius: var(--radio);
+      background: linear-gradient(180deg, #101016, #0c0c11);
+      scroll-margin-top: 88px;
+      transition: border-color var(--transicion), box-shadow var(--transicion);
+    }
+
+    .gp--proxima {
+      border-color: rgba(225, 6, 0, .45);
+      box-shadow: 0 0 0 1px rgba(225, 6, 0, .1), 0 18px 50px rgba(0, 0, 0, .3);
+    }
+
+    .gp--vivo {
+      border-color: rgba(255, 74, 61, .7);
+      box-shadow: 0 0 0 1px rgba(225, 6, 0, .2), 0 18px 60px rgba(225, 6, 0, .15);
+    }
+
+    .gp__cab {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 20px 12px;
+    }
+
+    .gp__ronda {
+      display: grid;
+      place-items: center;
+      flex: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--borde);
+      border-radius: 11px;
+      background: #0a0a0e;
+      color: var(--suave);
+      font-size: .78rem;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: .02em;
+    }
+
+    .gp--proxima .gp__ronda,
+    .gp--vivo .gp__ronda {
+      border-color: rgba(225, 6, 0, .5);
+      color: var(--rojo-claro);
+    }
+
+    .gp__titulo { min-width: 0; }
+
+    .gp__titulo h3 {
+      margin: 0;
+      font-size: 1.02rem;
+      font-weight: 750;
+      letter-spacing: -.01em;
+      line-height: 1.25;
+    }
+
+    .gp__titulo p {
+      margin: 3px 0 0;
+      overflow: hidden;
+      color: var(--tenue);
+      font-size: .78rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .gp__estado { margin-left: auto; flex: none; }
+
+    .gp__meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 0 20px 12px 76px;
+      color: var(--tenue);
+      font-size: .74rem;
+    }
+
+    .tag-sprint {
+      padding: 2px 7px;
+      border: 1px solid rgba(242, 201, 76, .35);
+      border-radius: 999px;
+      color: #f2c94c;
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .gp__meta a {
+      margin-left: auto;
+      color: var(--tenue);
+      text-decoration: none;
+      transition: color var(--transicion);
+    }
+
+    .gp__meta a:hover { color: var(--texto); }
+
+    .sesiones {
+      display: grid;
+      gap: 5px;
+      margin: 0;
+      padding: 0 14px 14px;
+      list-style: none;
+    }
+
+    .sesion {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 112px 72px 92px;
+      gap: 12px;
+      align-items: center;
+      padding: 10px 12px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .022);
+      transition: border-color var(--transicion), background var(--transicion);
+    }
+
+    .sesion:hover {
+      border-color: var(--borde-suave);
+      background: rgba(255, 255, 255, .035);
+    }
+
+    .sesion__nombre {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-width: 0;
+      font-size: .88rem;
+      font-weight: 600;
+    }
+
+    .sesion__punto {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #3a3a46;
+      flex: none;
+    }
+
+    .sesion__fecha {
+      color: var(--tenue);
+      font-size: .76rem;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .sesion__hora {
+      color: var(--texto);
+      font-size: .92rem;
+      font-weight: 750;
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .sesion__hora small {
+      margin-left: 3px;
+      color: var(--tenue);
+      font-size: .62rem;
+      font-weight: 600;
+    }
+
+    .sesion[data-estado="pasada"] { background: rgba(255, 255, 255, .012); }
+    .sesion[data-estado="pasada"] .sesion__nombre { color: var(--suave); }
+    .sesion[data-estado="pasada"] .sesion__hora { color: var(--tenue); }
+
+    .sesion[data-estado="proxima"] .sesion__punto { background: var(--rojo); }
+
+    .sesion[data-estado="en-vivo"] {
+      border-color: rgba(225, 6, 0, .38);
+      background: rgba(225, 6, 0, .09);
+    }
+
+    .sesion[data-estado="en-vivo"] .sesion__punto {
+      background: var(--rojo-claro);
+      animation: pulso 1.6s infinite;
+    }
+
+    .estado {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 8px;
+      border: 1px solid var(--borde);
+      border-radius: 999px;
+      color: var(--tenue);
+      font-size: .6rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .estado--proxima {
+      border-color: #3a3a48;
+      background: #1c1c25;
+      color: #fff;
+    }
+
+    .estado--en-vivo {
+      border-color: var(--rojo);
+      background: var(--rojo);
+      color: #fff;
+    }
+
+    .estado--pasada {
+      border-color: transparent;
+      background: rgba(255, 255, 255, .03);
+      color: var(--tenue);
+    }
+
+    .vacio {
+      margin: 0;
+      padding: 34px;
+      border: 1px dashed var(--borde);
+      border-radius: var(--radio);
+      color: var(--tenue);
+      text-align: center;
+    }
+
+    /* ============================================================
+       Novedades
+       ============================================================ */
+    .novedades {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+      gap: 14px;
+    }
+
+    .novedad {
+      padding: 18px;
+      border: 1px solid var(--borde-suave);
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .novedad__fecha {
+      margin: 0;
+      color: var(--rojo-claro);
+      font-size: .66rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .novedad h3 {
+      margin: 8px 0 6px;
+      font-size: .98rem;
+      font-weight: 750;
+    }
+
+    .novedad p {
+      margin: 0;
+      color: var(--suave);
+      font-size: .86rem;
+      line-height: 1.55;
+    }
+
+    /* ============================================================
+       Error y pie
+       ============================================================ */
+    .error {
+      margin-top: 20px;
+      padding: 16px 18px;
+      border: 1px solid rgba(225, 6, 0, .45);
+      border-radius: 12px;
+      background: rgba(225, 6, 0, .08);
+      color: #ffd9d6;
+      font-size: .86rem;
+    }
+
+    .pie {
+      margin-top: 26px;
+      padding: 30px 0 40px;
+      border-top: 1px solid var(--borde-suave);
+      color: var(--tenue);
+      font-size: .76rem;
+    }
+
+    .pie__fila {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .pie p { margin: 0; }
+
+    .pie a {
+      color: var(--suave);
+      text-decoration: underline;
+      text-decoration-color: #3a3a46;
+      text-underline-offset: 3px;
+    }
+
+    .pie a:hover { color: var(--texto); }
+
+    @keyframes pulso {
+      0%   { box-shadow: 0 0 0 0 rgba(255, 74, 61, .55); }
+      70%  { box-shadow: 0 0 0 7px rgba(255, 74, 61, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 74, 61, 0); }
+    }
+
+    /* ============================================================
+       Responsive
+       ============================================================ */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        padding-top: 38px;
+      }
+
+      .hero__bajada { max-width: 60ch; }
+      .proxima { max-width: 640px; }
+    }
+
+    @media (max-width: 760px) {
+      .contenedor { width: calc(100% - 28px); }
+      .cabecera__fila { min-height: 58px; gap: 10px; }
+      .nav { display: none; }
+      .reloj { margin-left: auto; }
+      .marca__texto { font-size: .82rem; }
+
+      h1 { font-size: clamp(2.5rem, 12vw, 3.3rem); }
+      .stats { gap: 20px; }
+
+      .seccion { padding: 38px 0; }
+      .seccion__cab { align-items: flex-start; }
+      .filtros { width: 100%; }
+      .filtros button { flex: 1; padding-inline: 8px; }
+
+      .proxima { padding: 18px; border-radius: 18px; }
+      .cuenta__bloque { padding: 9px 4px; }
+      .cuenta__bloque span { font-size: 1.45rem; }
+
+      .gp__cab { padding: 15px 14px 10px; gap: 11px; align-items: flex-start; }
+      .gp__ronda { width: 36px; height: 36px; border-radius: 9px; font-size: .72rem; }
+      .gp__titulo h3 { font-size: .94rem; }
+      .gp__titulo p { font-size: .72rem; }
+      /* En celular el estado de cada sesión ya se ve en cada fila. */
+      .gp__estado { display: none; }
+      .gp__meta { padding: 0 14px 12px 61px; gap: 8px; }
+      .gp__meta a { margin-left: 0; }
+
+      .sesiones { padding: 0 9px 10px; gap: 4px; }
+
+      .sesion {
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas:
+          "nombre estado"
+          "fecha  hora";
+        gap: 3px 10px;
+        padding: 10px 11px;
+      }
+
+      .sesion__nombre { grid-area: nombre; font-size: .85rem; }
+      .sesion__fecha { grid-area: fecha; padding-left: 15px; text-align: left; }
+      .sesion__hora { grid-area: hora; font-size: .88rem; }
+      .sesion .estado { grid-area: estado; justify-self: end; }
+
+      .pie__fila { flex-direction: column; }
+    }
+
+    @media (max-width: 400px) {
+      .reloj__zona { display: none; }
+      .stats { justify-content: space-between; gap: 10px; }
+      .stats strong { font-size: 1.25rem; }
+      .stats span { font-size: .6rem; }
+      .cuenta__bloque span { font-size: 1.25rem; }
+      .cuenta__bloque small { font-size: .52rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="saltar" href="#calendario">Saltar al calendario</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="marca" href="#inicio" aria-label="F1 Calendario 2026, ir al inicio">
+        <span class="marca__icono" aria-hidden="true">F1</span>
+        <span class="marca__texto">Calendario <strong>2026</strong></span>
+      </a>
+
+      <nav class="nav" aria-label="Secciones">
+        <a href="#calendario">Calendario</a>
+        <a href="#novedades">Novedades</a>
+      </nav>
+
+      <div class="reloj" title="Hora actual en Argentina">
+        <span class="reloj__punto" aria-hidden="true"></span>
+        <span id="reloj">--:--:--</span>
+        <span class="reloj__zona">ARG</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- ===================== Portada y próxima sesión ===================== -->
+    <section class="hero contenedor" aria-labelledby="titulo-pagina">
+      <div class="hero__intro">
+        <p class="etiqueta">Temporada 2026 · Hora argentina</p>
+        <h1 id="titulo-pagina">Calendario F1 <span class="anio">2026</span></h1>
+        <p class="hero__bajada">
+          Prácticas, clasificación y carrera de todas las fechas, convertidas
+          automáticamente a la hora de Argentina.
+        </p>
+
+        <ul class="stats">
+          <li><strong id="stat-gp">—</strong><span>Grandes Premios</span></li>
+          <li><strong id="stat-sprint">—</strong><span>con sprint</span></li>
+          <li><strong id="stat-disputados">—</strong><span>disputados</span></li>
+        </ul>
+
+        <button class="boton-instalar" id="instalar" type="button" hidden>
+          Instalar como app
+        </button>
+      </div>
+
+      <article class="proxima" id="proxima" aria-labelledby="proxima-titulo">
+        <div class="proxima__cab">
+          <span class="punto-vivo" aria-hidden="true"></span>
+          <span id="proxima-etiqueta">Cargando calendario</span>
+          <span class="proxima__ronda" id="proxima-ronda">—</span>
+        </div>
+
+        <h2 id="proxima-titulo">Un momento…</h2>
+        <p class="proxima__gp" id="proxima-gp">Leyendo los horarios de la temporada</p>
+        <p class="proxima__fecha" id="proxima-fecha">Horarios en UTC convertidos a hora argentina</p>
+
+        <p class="cuenta__label" id="cuenta-label">Cuenta regresiva</p>
+        <div class="cuenta" id="cuenta-regresiva">
+          <div class="cuenta__bloque"><span id="cd-dias">00</span><small>días</small></div>
+          <div class="cuenta__bloque"><span id="cd-horas">00</span><small>horas</small></div>
+          <div class="cuenta__bloque"><span id="cd-minutos">00</span><small>min</small></div>
+          <div class="cuenta__bloque"><span id="cd-segundos">00</span><small>seg</small></div>
+        </div>
+      </article>
+    </section>
+
+    <div class="contenedor">
+      <div class="error" id="error" role="alert" hidden></div>
+      <p class="sr-only" id="anuncio" aria-live="polite"></p>
+    </div>
+
+    <!-- ===================== Calendario ===================== -->
+    <section class="seccion contenedor" id="calendario" aria-labelledby="titulo-calendario">
+      <div class="seccion__cab">
+        <div>
+          <p class="etiqueta">Calendario completo</p>
+          <h2 id="titulo-calendario">Fines de semana</h2>
+          <p class="nota-datos">Los horarios pueden cambiar. Cada fecha enlaza a su fuente oficial.</p>
+        </div>
+
+        <div class="filtros" role="group" aria-label="Filtrar fines de semana">
+          <button type="button" data-filtro="todas" aria-pressed="true">Todas</button>
+          <button type="button" data-filtro="proximas" aria-pressed="false">Próximas</button>
+          <button type="button" data-filtro="finalizadas" aria-pressed="false">Finalizadas</button>
+        </div>
+      </div>
+
+      <nav class="rondas" id="rondas" aria-label="Ir a un Gran Premio"></nav>
+
+      <div class="lista-gp" id="lista-gp">
+        <p class="cargando" id="cargando">Cargando calendario…</p>
+      </div>
+
+      <p class="vacio" id="vacio" hidden>No hay fines de semana para este filtro.</p>
+    </section>
+
+    <!-- ===================== Novedades ===================== -->
+    <section class="seccion contenedor" id="novedades" aria-labelledby="titulo-novedades">
+      <div class="seccion__cab">
+        <div>
+          <p class="etiqueta">Novedades</p>
+          <h2 id="titulo-novedades">Últimos cambios</h2>
+        </div>
+      </div>
+
+      <div class="novedades" id="lista-novedades">
+        <p class="cargando">Cargando novedades…</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie__fila">
+      <p>
+        Proyecto personal, no oficial. Horarios guardados en UTC y mostrados en
+        <strong>America/Argentina/Buenos_Aires</strong>.
+      </p>
+      <p>
+        <a href="https://github.com/sportstimes/f1" target="_blank" rel="noopener">Fuente de horarios</a>
+        ·
+        <a href="https://www.formula1.com/en/racing/2026" target="_blank" rel="noopener">Calendario oficial</a>
+      </p>
+    </div>
+  </footer>
+
+  <noscript>
+    <div class="contenedor">
+      <p class="error">Esta página necesita JavaScript para leer los horarios y calcular la cuenta regresiva.</p>
+    </div>
+  </noscript>
+
+  <script>
+    // ============================================================
+    // Configuración
+    // ============================================================
+    const ZONA = 'America/Argentina/Buenos_Aires';
+
+    const NOMBRES_SESION = {
+      FP1: 'Práctica 1',
+      FP2: 'Práctica 2',
+      FP3: 'Práctica 3',
+      SprintQualy: 'Clasificación sprint',
+      Sprint: 'Sprint',
+      Qualy: 'Clasificación',
+      Carrera: 'Carrera'
+    };
+
+    const ETIQUETA_ESTADO = {
+      'pasada': 'Pasada',
+      'en-vivo': 'En vivo',
+      'proxima': 'Próxima'
+    };
+
+    // Formateadores: siempre con la zona horaria de Argentina.
+    const fmtDia = new Intl.DateTimeFormat('es-AR', {
+      timeZone: ZONA, weekday: 'short', day: 'numeric', month: 'short'
+    });
+    const fmtDiaLargo = new Intl.DateTimeFormat('es-AR', {
+      timeZone: ZONA, weekday: 'long', day: 'numeric', month: 'long'
+    });
+    const fmtHora = new Intl.DateTimeFormat('es-AR', {
+      timeZone: ZONA, hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
+    });
+    const fmtReloj = new Intl.DateTimeFormat('es-AR', {
+      timeZone: ZONA, hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+    });
+    const fmtFechaNovedad = new Intl.DateTimeFormat('es-AR', {
+      timeZone: ZONA, day: 'numeric', month: 'long', year: 'numeric'
+    });
+    const fmtPartes = new Intl.DateTimeFormat('es-AR', {
+      timeZone: ZONA, day: 'numeric', month: 'short'
+    });
+
+    // ============================================================
+    // Utilidades
+    // ============================================================
+    const $ = (id) => document.getElementById(id);
+
+    /** Escapa texto para poder insertarlo dentro de HTML. */
+    function esc(valor) {
+      return String(valor).replace(/[&<>"']/g, (caracter) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      })[caracter]);
+    }
+
+    /** Limpia comas y puntos que agrega Intl al abreviar. */
+    function limpiar(texto) {
+      return texto.replace(/,/g, '').replace(/\./g, '');
+    }
+
+    function fechaCorta(ms) {
+      return limpiar(fmtDia.format(new Date(ms)));
+    }
+
+    function horaCorta(ms) {
+      return fmtHora.format(new Date(ms));
+    }
+
+    /** Devuelve "6–8 mar" o "28 feb – 1 mar" según corresponda. */
+    function rangoFechas(msInicio, msFin) {
+      const partes = (ms) => {
+        const datos = {};
+        for (const parte of fmtPartes.formatToParts(new Date(ms))) {
+          if (parte.type === 'day' || parte.type === 'month') datos[parte.type] = parte.value;
+        }
+        return datos;
+      };
+
+      const inicio = partes(msInicio);
+      const fin = partes(msFin);
+
+      if (inicio.month === fin.month) {
+        return `${inicio.day}–${fin.day} ${limpiar(inicio.month)}`;
+      }
+      return `${inicio.day} ${limpiar(inicio.month)} – ${fin.day} ${limpiar(fin.month)}`;
+    }
+
+    function dosDigitos(numero) {
+      return String(numero).padStart(2, '0');
+    }
+
+    // ============================================================
+    // Estado de la aplicación
+    // ============================================================
+    let carreras = [];           // carreras con sesiones ya procesadas
+    let sesiones = [];           // todas las sesiones, ordenadas por fecha
+    let filtro = 'todas';
+    let objetivoCuenta = null;   // instante al que cuenta la cuenta regresiva
+    let ultimaFirma = '';
+
+    // ============================================================
+    // Carga de datos
+    // ============================================================
+    async function cargarJSON(ruta) {
+      const respuesta = await fetch(ruta, { cache: 'no-store' });
+      if (!respuesta.ok) {
+        throw new Error(`No se pudo leer ${ruta} (HTTP ${respuesta.status})`);
+      }
+      return respuesta.json();
+    }
+
+    /** Convierte los horarios ISO en milisegundos y ordena las sesiones. */
+    function prepararDatos(datos) {
+      if (!datos || !Array.isArray(datos.carreras) || datos.carreras.length === 0) {
+        throw new Error('El archivo de la temporada no tiene carreras.');
+      }
+
+      const lista = [];
+      const preparadas = datos.carreras.map((carrera) => {
+        const sesionesCarrera = carrera.sesiones.map((sesion) => {
+          const inicioMs = Date.parse(sesion.inicioUTC);
+          if (!Number.isFinite(inicioMs)) {
+            throw new Error(`Hora inválida en ${carrera.nombre}: ${sesion.inicioUTC}`);
+          }
+
+          const procesada = {
+            ...sesion,
+            carrera,
+            inicioMs,
+            finMs: inicioMs + (sesion.duracionMin || 0) * 60000
+          };
+          lista.push(procesada);
+          return procesada;
+        });
+
+        return { ...carrera, sesiones: sesionesCarrera };
+      });
+
+      lista.sort((a, b) => a.inicioMs - b.inicioMs);
+      return { carreras: preparadas, sesiones: lista };
+    }
+
+    // ============================================================
+    // Cálculos de estado
+    // ============================================================
+    function estadoSesion(sesion, ahora) {
+      if (ahora >= sesion.finMs) return 'pasada';
+      if (ahora >= sesion.inicioMs) return 'en-vivo';
+      return 'proxima';
+    }
+
+    function estadoCarrera(carrera, ahora) {
+      let hayViva = false;
+      let hayFutura = false;
+
+      for (const sesion of carrera.sesiones) {
+        if (ahora >= sesion.finMs) continue;
+        if (ahora >= sesion.inicioMs) hayViva = true;
+        else hayFutura = true;
+      }
+
+      if (hayViva) return 'en-vivo';
+      if (hayFutura) return 'proxima';
+      return 'pasada';
+    }
+
+    function buscarEstado(ahora) {
+      const enVivo = sesiones.find((s) => ahora >= s.inicioMs && ahora < s.finMs) || null;
+      const proxima = sesiones.find((s) => s.inicioMs > ahora) || null;
+      return {
+        enVivo,
+        proxima,
+        firma: `${enVivo ? enVivo.carrera.ronda + enVivo.tipo : '-'}|${proxima ? proxima.carrera.ronda + proxima.tipo : '-'}`
+      };
+    }
+
+    // ============================================================
+    // Render: portada y cuenta regresiva
+    // ============================================================
+    function renderPortada(estado) {
+      const tarjeta = $('proxima');
+      const etiqueta = $('proxima-etiqueta');
+      const ronda = $('proxima-ronda');
+      const titulo = $('proxima-titulo');
+      const gp = $('proxima-gp');
+      const fecha = $('proxima-fecha');
+      const label = $('cuenta-label');
+
+      tarjeta.classList.toggle('proxima--vivo', Boolean(estado.enVivo));
+
+      if (estado.enVivo) {
+        const sesion = estado.enVivo;
+        etiqueta.textContent = 'En vivo ahora';
+        ronda.textContent = `R${sesion.carrera.ronda}`;
+        titulo.textContent = NOMBRES_SESION[sesion.tipo] || sesion.tipo;
+        gp.textContent = `${sesion.carrera.bandera} ${sesion.carrera.nombre}`;
+        fecha.textContent = `${limpiar(fmtDiaLargo.format(new Date(sesion.inicioMs)))} · ${horaCorta(sesion.inicioMs)} hs`;
+        label.textContent = 'Termina en';
+        objetivoCuenta = sesion.finMs;
+        return;
+      }
+
+      if (estado.proxima) {
+        const sesion = estado.proxima;
+        etiqueta.textContent = 'Próxima sesión';
+        ronda.textContent = `R${sesion.carrera.ronda}`;
+        titulo.textContent = NOMBRES_SESION[sesion.tipo] || sesion.tipo;
+        gp.textContent = `${sesion.carrera.bandera} ${sesion.carrera.nombre}`;
+        fecha.textContent = `${limpiar(fmtDiaLargo.format(new Date(sesion.inicioMs)))} · ${horaCorta(sesion.inicioMs)} hs`;
+        label.textContent = 'Empieza en';
+        objetivoCuenta = sesion.inicioMs;
+        return;
+      }
+
+      // Temporada terminada.
+      tarjeta.classList.remove('proxima--vivo');
+      etiqueta.textContent = 'Temporada 2026';
+      ronda.textContent = '—';
+      titulo.textContent = 'Temporada finalizada';
+      gp.textContent = 'No quedan sesiones por disputar.';
+      fecha.textContent = 'Nos vemos en la temporada 2027.';
+      label.textContent = 'Cuenta regresiva';
+      objetivoCuenta = null;
+      actualizarCuenta();
+    }
+
+    function actualizarCuenta() {
+      const bloques = {
+        dias: $('cd-dias'),
+        horas: $('cd-horas'),
+        minutos: $('cd-minutos'),
+        segundos: $('cd-segundos')
+      };
+
+      if (!objetivoCuenta) {
+        bloques.dias.textContent = '00';
+        bloques.horas.textContent = '00';
+        bloques.minutos.textContent = '00';
+        bloques.segundos.textContent = '00';
+        return;
+      }
+
+      const resta = Math.max(0, objetivoCuenta - Date.now());
+      const totalSegundos = Math.floor(resta / 1000);
+
+      bloques.dias.textContent = dosDigitos(Math.floor(totalSegundos / 86400));
+      bloques.horas.textContent = dosDigitos(Math.floor((totalSegundos % 86400) / 3600));
+      bloques.minutos.textContent = dosDigitos(Math.floor((totalSegundos % 3600) / 60));
+      bloques.segundos.textContent = dosDigitos(totalSegundos % 60);
+    }
+
+    // ============================================================
+    // Render: calendario
+    // ============================================================
+    function renderChips(ahora) {
+      const contenedor = $('rondas');
+
+      contenedor.innerHTML = carreras.map((carrera) => {
+        const estado = estadoCarrera(carrera, ahora);
+        return `
+          <button type="button" class="ronda-chip" data-ronda="${carrera.ronda}" data-estado="${estado}"
+                  aria-label="Ronda ${dosDigitos(carrera.ronda)}: ${esc(carrera.nombre)}">
+            <span class="ronda-chip__num">${dosDigitos(carrera.ronda)}</span>
+            <span aria-hidden="true">${esc(carrera.bandera)}</span>
+          </button>
+        `;
+      }).join('');
+
+      contenedor.querySelectorAll('.ronda-chip').forEach((boton) => {
+        boton.addEventListener('click', () => {
+          const ronda = boton.dataset.ronda;
+          let destino = $(`gp-${ronda}`);
+
+          // Si el filtro actual oculta esa fecha, volvemos a "Todas".
+          if (!destino) {
+            filtro = 'todas';
+            document.querySelectorAll('[data-filtro]').forEach((otro) => {
+              otro.setAttribute('aria-pressed', String(otro.dataset.filtro === 'todas'));
+            });
+            renderCalendario({ ahora: Date.now() });
+            destino = $(`gp-${ronda}`);
+          }
+
+          if (destino) destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+    }
+
+    function htmlSesion(sesion, ahora) {
+      const estado = estadoSesion(sesion, ahora);
+      const nombre = NOMBRES_SESION[sesion.tipo] || sesion.tipo;
+
+      return `
+        <li class="sesion" data-estado="${estado}">
+          <span class="sesion__nombre">
+            <span class="sesion__punto" aria-hidden="true"></span>
+            ${esc(nombre)}
+          </span>
+          <span class="sesion__fecha">${fechaCorta(sesion.inicioMs)}</span>
+          <time class="sesion__hora" datetime="${esc(sesion.inicioUTC)}">
+            ${horaCorta(sesion.inicioMs)}<small>hs</small>
+          </time>
+          <span class="estado estado--${estado}">${ETIQUETA_ESTADO[estado]}</span>
+        </li>
+      `;
+    }
+
+    function htmlCarrera(carrera, estado, ahora) {
+      const tieneSprint = carrera.sesiones.some((s) => s.tipo === 'Sprint');
+      const esProxima = estado === 'proxima' && carrera === estadoProxima(ahora);
+      const clases = ['gp'];
+
+      if (estado === 'en-vivo') clases.push('gp--vivo');
+      else if (esProxima) clases.push('gp--proxima');
+
+      const etiqueta = estado === 'en-vivo' ? 'En curso'
+        : estado === 'proxima' ? 'Próximo'
+        : 'Finalizado';
+
+      const primera = carrera.sesiones[0].inicioMs;
+      const ultima = carrera.sesiones[carrera.sesiones.length - 1].inicioMs;
+
+      return `
+        <article class="${clases.join(' ')}" id="gp-${carrera.ronda}" aria-labelledby="gp-titulo-${carrera.ronda}">
+          <header class="gp__cab">
+            <span class="gp__ronda" aria-label="Ronda ${carrera.ronda}">${dosDigitos(carrera.ronda)}</span>
+            <div class="gp__titulo">
+              <h3 id="gp-titulo-${carrera.ronda}">
+                <span aria-hidden="true">${esc(carrera.bandera)}</span>
+                ${esc(carrera.nombre)}
+              </h3>
+              <p>${esc(carrera.circuito)} · ${esc(carrera.ciudad)}</p>
+            </div>
+            <span class="estado estado--${estado} gp__estado">${etiqueta}</span>
+          </header>
+
+          <div class="gp__meta">
+            <span>${rangoFechas(primera, ultima)}</span>
+            ${tieneSprint ? '<span class="tag-sprint">Sprint</span>' : ''}
+            <a href="${esc(carrera.fuente)}" target="_blank" rel="noopener">Fuente oficial ↗</a>
+          </div>
+
+          <ul class="sesiones">
+            ${carrera.sesiones.map((sesion) => htmlSesion(sesion, ahora)).join('')}
+          </ul>
+        </article>
+      `;
+    }
+
+    function estadoProxima(ahora) {
+      const proxima = sesiones.find((s) => s.inicioMs > ahora);
+      return proxima ? proxima.carrera : null;
+    }
+
+    function renderCalendario(estado) {
+      const ahora = estado.ahora;
+      const lista = $('lista-gp');
+      const vacio = $('vacio');
+
+      const visibles = carreras.filter((carrera) => {
+        if (filtro === 'todas') return true;
+        const estadoCarreraActual = estadoCarrera(carrera, ahora);
+        if (filtro === 'proximas') return estadoCarreraActual !== 'pasada';
+        return estadoCarreraActual === 'pasada';
+      });
+
+      lista.innerHTML = visibles.map((carrera) => {
+        return htmlCarrera(carrera, estadoCarrera(carrera, ahora), ahora);
+      }).join('');
+
+      vacio.hidden = visibles.length > 0;
+      renderChips(ahora);
+    }
+
+    // ============================================================
+    // Render: novedades y estadísticas
+    // ============================================================
+    function renderNovedades(datos) {
+      const contenedor = $('lista-novedades');
+
+      if (!datos) {
+        contenedor.innerHTML = '<p class="cargando">No se pudieron cargar las novedades.</p>';
+        return;
+      }
+
+      const lista = Array.isArray(datos.novedades) ? datos.novedades : [];
+
+      if (lista.length === 0) {
+        contenedor.innerHTML = '<p class="cargando">Todavía no hay novedades.</p>';
+        return;
+      }
+
+      contenedor.innerHTML = lista.map((novedad) => {
+        const fecha = new Date(`${novedad.fecha}T12:00:00Z`);
+        return `
+          <article class="novedad">
+            <p class="novedad__fecha">${esc(fmtFechaNovedad.format(fecha))}</p>
+            <h3>${esc(novedad.titulo || 'Novedad')}</h3>
+            <p>${esc(novedad.texto)}</p>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function renderEstadisticas(ahora) {
+      const disputados = carreras.filter((carrera) => {
+        const ultima = carrera.sesiones[carrera.sesiones.length - 1];
+        return ahora >= ultima.finMs;
+      }).length;
+      const conSprint = carreras.filter((carrera) => {
+        return carrera.sesiones.some((sesion) => sesion.tipo === 'Sprint');
+      }).length;
+
+      $('stat-gp').textContent = carreras.length;
+      $('stat-sprint').textContent = conSprint;
+      $('stat-disputados').textContent = disputados;
+    }
+
+    // ============================================================
+    // Render general
+    // ============================================================
+    function renderTodo() {
+      const ahora = Date.now();
+      const estado = buscarEstado(ahora);
+      estado.ahora = ahora;
+
+      renderPortada(estado);
+      renderCalendario(estado);
+      renderEstadisticas(ahora);
+      actualizarCuenta();
+      anunciar(estado);
+      ultimaFirma = estado.firma;
+    }
+
+    function anunciar(estado) {
+      let texto;
+
+      if (estado.enVivo) {
+        texto = `En vivo: ${NOMBRES_SESION[estado.enVivo.tipo]} del ${estado.enVivo.carrera.nombre}.`;
+      } else if (estado.proxima) {
+        texto = `Próxima sesión: ${NOMBRES_SESION[estado.proxima.tipo]} del ` +
+          `${estado.proxima.carrera.nombre}, ${limpiar(fmtDiaLargo.format(new Date(estado.proxima.inicioMs)))} ` +
+          `a las ${horaCorta(estado.proxima.inicioMs)}.`;
+      } else {
+        texto = 'La temporada 2026 terminó.';
+      }
+
+      $('anuncio').textContent = texto;
+    }
+
+    // ============================================================
+    // Reloj y bucle de actualización
+    // ============================================================
+    function actualizarReloj() {
+      $('reloj').textContent = fmtReloj.format(new Date());
+    }
+
+    function tick() {
+      actualizarReloj();
+      actualizarCuenta();
+
+      // Solo se vuelve a dibujar cuando cambia la sesión en vivo o la próxima.
+      const estado = buscarEstado(Date.now());
+      if (estado.firma !== ultimaFirma) {
+        renderTodo();
+      }
+    }
+
+    // ============================================================
+    // Filtros e instalación
+    // ============================================================
+    function activarFiltros() {
+      const botones = document.querySelectorAll('[data-filtro]');
+
+      botones.forEach((boton) => {
+        boton.addEventListener('click', () => {
+          filtro = boton.dataset.filtro;
+
+          botones.forEach((otro) => {
+            otro.setAttribute('aria-pressed', String(otro === boton));
+          });
+
+          renderCalendario({ ahora: Date.now() });
+        });
+      });
+    }
+
+    function activarInstalacion() {
+      const boton = $('instalar');
+      let evento = null;
+
+      // Si ya está instalada, no mostramos el botón.
+      const instalada = window.matchMedia('(display-mode: standalone)').matches ||
+        window.navigator.standalone === true;
+      if (instalada) return;
+
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        evento = e;
+        boton.hidden = false;
+      });
+
+      boton.addEventListener('click', async () => {
+        if (!evento) return;
+        evento.prompt();
+        await evento.userChoice;
+        evento = null;
+        boton.hidden = true;
+      });
+
+      window.addEventListener('appinstalled', () => {
+        boton.hidden = true;
+      });
+    }
+
+    function registrarServiceWorker() {
+      if (!('serviceWorker' in navigator)) return;
+      if (location.protocol !== 'https:' && location.hostname !== 'localhost') return;
+
+      const registrar = () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {
+          // Si falla el registro, la web sigue funcionando sin modo offline.
+        });
+      };
+
+      // El evento "load" puede haber pasado mientras se leía el JSON.
+      if (document.readyState === 'complete') registrar();
+      else window.addEventListener('load', registrar, { once: true });
+    }
+
+    // ============================================================
+    // Inicio
+    // ============================================================
+    async function iniciar() {
+      actualizarReloj();
+
+      if (location.protocol === 'file:') {
+        mostrarError(
+          'Estás abriendo el archivo directamente. Para que el navegador pueda leer el JSON, ' +
+          'serví la carpeta con "python -m http.server 8000" y entrá a http://localhost:8000.'
+        );
+        return;
+      }
+
+      try {
+        const [datosTemporada, datosNovedades] = await Promise.all([
+          cargarJSON('data/temporada-2026.json'),
+          cargarJSON('data/novedades.json').catch(() => null)
+        ]);
+
+        const preparados = prepararDatos(datosTemporada);
+        carreras = preparados.carreras;
+        sesiones = preparados.sesiones;
+
+        renderNovedades(datosNovedades);
+        renderTodo();
+
+        activarFiltros();
+        activarInstalacion();
+        registrarServiceWorker();
+
+        setInterval(tick, 1000);
+      } catch (error) {
+        mostrarError(
+          `No se pudo cargar el calendario. ${error.message}`
+        );
+        $('lista-gp').innerHTML = '';
+      }
+    }
+
+    function mostrarError(mensaje) {
+      const caja = $('error');
+      caja.textContent = mensaje;
+      caja.hidden = false;
+      const cargando = $('cargando');
+      if (cargando) cargando.remove();
+    }
+
+    iniciar();
+  </script>
+</body>
+</html>

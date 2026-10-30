@@ -1,0 +1,863 @@
+{
+  "temporada": 2026,
+  "zonaHoraria": "America/Argentina/Buenos_Aires",
+  "actualizadoUTC": "2026-10-30T12:00:00Z",
+  "fuenteHorarios": {
+    "nombre": "sportstimes/f1 (horarios en UTC)",
+    "url": "https://github.com/sportstimes/f1"
+  },
+  "nota": "Todos los horarios están en UTC (ISO 8601). Las rondas 19 a 23 se contrastaron con ESPN y la web oficial de F1; las anteriores provienen de sportstimes/f1 y conviene verificarlas antes de usar los avisos.",
+  "carreras": [
+    {
+      "ronda": 1,
+      "nombre": "Gran Premio de Australia",
+      "pais": "Australia",
+      "bandera": "🇦🇺",
+      "circuito": "Albert Park Circuit",
+      "ciudad": "Melbourne",
+      "fuente": "https://www.formula1.com/en/racing/2026/australia",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-03-06T01:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP2",
+          "inicioUTC": "2026-03-06T05:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP3",
+          "inicioUTC": "2026-03-07T01:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-03-07T05:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-03-08T04:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 2,
+      "nombre": "Gran Premio de China",
+      "pais": "China",
+      "bandera": "🇨🇳",
+      "circuito": "Shanghai International Circuit",
+      "ciudad": "Shanghái",
+      "fuente": "https://www.formula1.com/en/racing/2026/china",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-03-13T03:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "SprintQualy",
+          "inicioUTC": "2026-03-13T07:30:00Z",
+          "duracionMin": 30
+        },
+        {
+          "tipo": "Sprint",
+          "inicioUTC": "2026-03-14T03:00:00Z",
+          "duracionMin": 45
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-03-14T07:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-03-15T07:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 3,
+      "nombre": "Gran Premio de Japón",
+      "pais": "Japón",
+      "bandera": "🇯🇵",
+      "circuito": "Suzuka International Racing Course",
+      "ciudad": "Suzuka",
+      "fuente": "https://www.formula1.com/en/racing/2026/japan",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-03-27T02:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP2",
+          "inicioUTC": "2026-03-27T06:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP3",
+          "inicioUTC": "2026-03-28T02:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-03-28T06:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-03-29T05:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 4,
+      "nombre": "Gran Premio de Miami",
+      "pais": "Estados Unidos",
+      "bandera": "🇺🇸",
+      "circuito": "Miami International Autodrome",
+      "ciudad": "Miami",
+      "fuente": "https://www.formula1.com/en/racing/2026/miami",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-05-01T16:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "SprintQualy",
+          "inicioUTC": "2026-05-01T20:30:00Z",
+          "duracionMin": 30
+        },
+        {
+          "tipo": "Sprint",
+          "inicioUTC": "2026-05-02T16:00:00Z",
+          "duracionMin": 45
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-05-02T20:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-05-03T17:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 5,
+      "nombre": "Gran Premio de Canadá",
+      "pais": "Canadá",
+      "bandera": "🇨🇦",
+      "circuito": "Circuit Gilles Villeneuve",
+      "ciudad": "Montreal",
+      "fuente": "https://www.formula1.com/en/racing/2026/canada",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-05-22T16:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "SprintQualy",
+          "inicioUTC": "2026-05-22T20:30:00Z",
+          "duracionMin": 30
+        },
+        {
+          "tipo": "Sprint",
+          "inicioUTC": "2026-05-23T16:00:00Z",
+          "duracionMin": 45
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-05-23T20:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-05-24T20:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 6,
+      "nombre": "Gran Premio de Mónaco",
+      "pais": "Mónaco",
+      "bandera": "🇲🇨",
+      "circuito": "Circuit de Monaco",
+      "ciudad": "Montecarlo",
+      "fuente": "https://www.formula1.com/en/racing/2026/monaco",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-06-05T11:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP2",
+          "inicioUTC": "2026-06-05T15:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP3",
+          "inicioUTC": "2026-06-06T10:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-06-06T14:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-06-07T13:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 7,
+      "nombre": "Gran Premio de Barcelona-Cataluña",
+      "pais": "España",
+      "bandera": "🇪🇸",
+      "circuito": "Circuit de Barcelona-Catalunya",
+      "ciudad": "Barcelona",
+      "fuente": "https://www.formula1.com/en/racing/2026/barcelona-catalunya",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-06-12T11:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP2",
+          "inicioUTC": "2026-06-12T15:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP3",
+          "inicioUTC": "2026-06-13T10:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-06-13T14:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-06-14T13:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 8,
+      "nombre": "Gran Premio de Austria",
+      "pais": "Austria",
+      "bandera": "🇦🇹",
+      "circuito": "Red Bull Ring",
+      "ciudad": "Spielberg",
+      "fuente": "https://www.formula1.com/en/racing/2026/austria",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-06-26T11:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP2",
+          "inicioUTC": "2026-06-26T15:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP3",
+          "inicioUTC": "2026-06-27T10:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-06-27T14:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-06-28T13:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 9,
+      "nombre": "Gran Premio de Gran Bretaña",
+      "pais": "Reino Unido",
+      "bandera": "🇬🇧",
+      "circuito": "Silverstone Circuit",
+      "ciudad": "Silverstone",
+      "fuente": "https://www.formula1.com/en/racing/2026/great-britain",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-07-03T11:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "SprintQualy",
+          "inicioUTC": "2026-07-03T15:30:00Z",
+          "duracionMin": 30
+        },
+        {
+          "tipo": "Sprint",
+          "inicioUTC": "2026-07-04T11:00:00Z",
+          "duracionMin": 45
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-07-04T15:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-07-05T14:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 10,
+      "nombre": "Gran Premio de Bélgica",
+      "pais": "Bélgica",
+      "bandera": "🇧🇪",
+      "circuito": "Circuit de Spa-Francorchamps",
+      "ciudad": "Spa",
+      "fuente": "https://www.formula1.com/en/racing/2026/belgium",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-07-17T11:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP2",
+          "inicioUTC": "2026-07-17T15:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP3",
+          "inicioUTC": "2026-07-18T10:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-07-18T14:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-07-19T13:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 11,
+      "nombre": "Gran Premio de Hungría",
+      "pais": "Hungría",
+      "bandera": "🇭🇺",
+      "circuito": "Hungaroring",
+      "ciudad": "Budapest",
+      "fuente": "https://www.formula1.com/en/racing/2026/hungary",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-07-24T11:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP2",
+          "inicioUTC": "2026-07-24T15:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP3",
+          "inicioUTC": "2026-07-25T10:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-07-25T14:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-07-26T13:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 12,
+      "nombre": "Gran Premio de los Países Bajos",
+      "pais": "Países Bajos",
+      "bandera": "🇳🇱",
+      "circuito": "Circuit Zandvoort",
+      "ciudad": "Zandvoort",
+      "fuente": "https://www.formula1.com/en/racing/2026/netherlands",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-08-21T10:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "SprintQualy",
+          "inicioUTC": "2026-08-21T14:30:00Z",
+          "duracionMin": 30
+        },
+        {
+          "tipo": "Sprint",
+          "inicioUTC": "2026-08-22T10:00:00Z",
+          "duracionMin": 45
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-08-22T14:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-08-23T13:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 13,
+      "nombre": "Gran Premio de Italia",
+      "pais": "Italia",
+      "bandera": "🇮🇹",
+      "circuito": "Autodromo Nazionale di Monza",
+      "ciudad": "Monza",
+      "fuente": "https://www.formula1.com/en/racing/2026/italy",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-09-04T10:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP2",
+          "inicioUTC": "2026-09-04T14:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP3",
+          "inicioUTC": "2026-09-05T10:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-09-05T14:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-09-06T13:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 14,
+      "nombre": "Gran Premio de España",
+      "pais": "España",
+      "bandera": "🇪🇸",
+      "circuito": "Madring",
+      "ciudad": "Madrid",
+      "fuente": "https://www.formula1.com/en/racing/2026/spain",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-09-11T11:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP2",
+          "inicioUTC": "2026-09-11T15:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP3",
+          "inicioUTC": "2026-09-12T10:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-09-12T14:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-09-13T13:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 15,
+      "nombre": "Gran Premio de Azerbaiyán",
+      "pais": "Azerbaiyán",
+      "bandera": "🇦🇿",
+      "circuito": "Baku City Circuit",
+      "ciudad": "Bakú",
+      "fuente": "https://www.formula1.com/en/racing/2026/azerbaijan",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-09-24T08:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP2",
+          "inicioUTC": "2026-09-24T12:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP3",
+          "inicioUTC": "2026-09-25T08:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-09-25T12:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-09-26T11:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 16,
+      "nombre": "Gran Premio de Baréin (en Malasia)",
+      "pais": "Baréin",
+      "bandera": "🇧🇭",
+      "circuito": "Sepang International Circuit",
+      "ciudad": "Sepang",
+      "fuente": "https://www.formula1.com/en/racing/2026/bahrain",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-10-02T04:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP2",
+          "inicioUTC": "2026-10-02T08:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP3",
+          "inicioUTC": "2026-10-03T04:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-10-03T08:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-10-04T07:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 17,
+      "nombre": "Gran Premio de Singapur",
+      "pais": "Singapur",
+      "bandera": "🇸🇬",
+      "circuito": "Marina Bay Street Circuit",
+      "ciudad": "Singapur",
+      "fuente": "https://www.formula1.com/en/racing/2026/singapore",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-10-09T08:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "SprintQualy",
+          "inicioUTC": "2026-10-09T12:30:00Z",
+          "duracionMin": 30
+        },
+        {
+          "tipo": "Sprint",
+          "inicioUTC": "2026-10-10T09:00:00Z",
+          "duracionMin": 45
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-10-10T13:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-10-11T12:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 18,
+      "nombre": "Gran Premio de Estados Unidos",
+      "pais": "Estados Unidos",
+      "bandera": "🇺🇸",
+      "circuito": "Circuit of the Americas",
+      "ciudad": "Austin",
+      "fuente": "https://www.formula1.com/en/racing/2026/united-states",
+      "verificado": false,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-10-23T17:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP2",
+          "inicioUTC": "2026-10-23T21:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP3",
+          "inicioUTC": "2026-10-24T17:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-10-24T21:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-10-25T20:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 19,
+      "nombre": "Gran Premio de México",
+      "pais": "México",
+      "bandera": "🇲🇽",
+      "circuito": "Autódromo Hermanos Rodríguez",
+      "ciudad": "Ciudad de México",
+      "fuente": "https://www.formula1.com/en/racing/2026/mexico",
+      "verificado": true,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-10-30T18:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP2",
+          "inicioUTC": "2026-10-30T22:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP3",
+          "inicioUTC": "2026-10-31T17:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-10-31T21:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-11-01T20:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 20,
+      "nombre": "Gran Premio de Brasil",
+      "pais": "Brasil",
+      "bandera": "🇧🇷",
+      "circuito": "Autódromo José Carlos Pace (Interlagos)",
+      "ciudad": "São Paulo",
+      "fuente": "https://www.formula1.com/en/racing/2026/brazil",
+      "verificado": true,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-11-06T15:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP2",
+          "inicioUTC": "2026-11-06T19:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP3",
+          "inicioUTC": "2026-11-07T14:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-11-07T18:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-11-08T17:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 21,
+      "nombre": "Gran Premio de Las Vegas",
+      "pais": "Estados Unidos",
+      "bandera": "🇺🇸",
+      "circuito": "Las Vegas Strip Circuit",
+      "ciudad": "Las Vegas",
+      "fuente": "https://www.formula1.com/en/racing/2026/las-vegas",
+      "verificado": true,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-11-20T00:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP2",
+          "inicioUTC": "2026-11-20T04:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP3",
+          "inicioUTC": "2026-11-21T00:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-11-21T04:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-11-22T04:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 22,
+      "nombre": "Gran Premio de Qatar",
+      "pais": "Qatar",
+      "bandera": "🇶🇦",
+      "circuito": "Lusail International Circuit",
+      "ciudad": "Lusail",
+      "fuente": "https://www.formula1.com/en/racing/2026/qatar",
+      "verificado": true,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-11-27T13:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP2",
+          "inicioUTC": "2026-11-27T17:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP3",
+          "inicioUTC": "2026-11-28T14:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-11-28T18:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-11-29T16:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    },
+    {
+      "ronda": 23,
+      "nombre": "Gran Premio de Abu Dabi",
+      "pais": "Emiratos Árabes Unidos",
+      "bandera": "🇦🇪",
+      "circuito": "Yas Marina Circuit",
+      "ciudad": "Abu Dabi",
+      "fuente": "https://www.formula1.com/en/racing/2026/united-arab-emirates",
+      "verificado": true,
+      "sesiones": [
+        {
+          "tipo": "FP1",
+          "inicioUTC": "2026-12-04T09:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP2",
+          "inicioUTC": "2026-12-04T13:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "FP3",
+          "inicioUTC": "2026-12-05T10:30:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Qualy",
+          "inicioUTC": "2026-12-05T14:00:00Z",
+          "duracionMin": 60
+        },
+        {
+          "tipo": "Carrera",
+          "inicioUTC": "2026-12-06T13:00:00Z",
+          "duracionMin": 120
+        }
+      ]
+    }
+  ]
+}
