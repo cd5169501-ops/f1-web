@@ -121,6 +121,13 @@ Con el sitio publicado por HTTPS, en Android/Chrome aparece la opción
 **Instalar app** (también se muestra un botón en la portada cuando el navegador
 lo permite). En iPhone: **Compartir → Agregar a pantalla de inicio**.
 
+### Mostrar u ocultar secciones
+
+Cada sección (Posiciones, Calendario y Novedades) tiene un botón **Ocultar** en
+su encabezado. Al plegarla queda solo el título y el botón **Mostrar**. El
+estado se guarda en el navegador (`localStorage`), y al usar el menú o el
+enlace para saltar al calendario la sección se vuelve a abrir.
+
 ## Variables y secretos
 
 Este repositorio **no contiene** tokens, contraseñas ni direcciones de mail.

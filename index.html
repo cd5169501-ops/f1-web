@@ -453,6 +453,50 @@
       font-size: .78rem;
     }
 
+    /* Botón para ocultar y volver a mostrar cada sección */
+    .seccion__acciones {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .boton-plegar {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 13px;
+      border: 1px solid var(--borde);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--suave);
+      font-size: .74rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: color var(--transicion), border-color var(--transicion);
+    }
+
+    .boton-plegar:hover {
+      color: var(--texto);
+      border-color: #3a3a46;
+    }
+
+    .boton-plegar__icono {
+      flex: none;
+      transition: transform var(--transicion);
+    }
+
+    .boton-plegar[aria-expanded="false"] .boton-plegar__icono {
+      transform: rotate(-90deg);
+    }
+
+    .seccion[data-plegado="true"] { padding-block: 26px; }
+
+    .seccion[data-plegado="true"] .seccion__cab { margin-bottom: 0; }
+
+    /* Los filtros también se ocultan: no tiene sentido cambiarlos a ciegas. */
+    .seccion[data-plegado="true"] .filtros { display: none; }
+
     .filtros {
       display: inline-flex;
       gap: 4px;
@@ -972,6 +1016,9 @@
       .filtros { width: 100%; }
       .filtros button { flex: 1; padding-inline: 8px; }
 
+      .seccion__acciones { width: 100%; }
+      .seccion__acciones .filtros { width: auto; flex: 1 1 auto; }
+
       .posiciones { grid-template-columns: 1fr; }
 
       .proxima { padding: 18px; border-radius: 18px; }
@@ -1105,6 +1152,13 @@
           <h2 id="titulo-posiciones">Posiciones</h2>
           <p class="nota-datos" id="posiciones-fecha">Cargando posiciones…</p>
         </div>
+
+        <div class="seccion__acciones">
+          <button class="boton-plegar" type="button" data-plegar="posiciones" aria-expanded="true" aria-controls="lista-posiciones">
+            <svg class="boton-plegar__icono" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg>
+            <span class="boton-plegar__texto">Ocultar</span>
+          </button>
+        </div>
       </div>
 
       <div class="posiciones" id="lista-posiciones">
@@ -1121,20 +1175,29 @@
           <p class="nota-datos">Los horarios pueden cambiar. Cada fecha enlaza a su fuente oficial.</p>
         </div>
 
-        <div class="filtros" role="group" aria-label="Filtrar fines de semana">
-          <button type="button" data-filtro="todas" aria-pressed="true">Todas</button>
-          <button type="button" data-filtro="proximas" aria-pressed="false">Próximas</button>
-          <button type="button" data-filtro="finalizadas" aria-pressed="false">Finalizadas</button>
+        <div class="seccion__acciones">
+          <div class="filtros" role="group" aria-label="Filtrar fines de semana">
+            <button type="button" data-filtro="todas" aria-pressed="true">Todas</button>
+            <button type="button" data-filtro="proximas" aria-pressed="false">Próximas</button>
+            <button type="button" data-filtro="finalizadas" aria-pressed="false">Finalizadas</button>
+          </div>
+
+          <button class="boton-plegar" type="button" data-plegar="calendario" aria-expanded="true" aria-controls="calendario-cuerpo">
+            <svg class="boton-plegar__icono" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg>
+            <span class="boton-plegar__texto">Ocultar</span>
+          </button>
         </div>
       </div>
 
-      <nav class="rondas" id="rondas" aria-label="Ir a un Gran Premio"></nav>
+      <div class="seccion__cuerpo" id="calendario-cuerpo">
+        <nav class="rondas" id="rondas" aria-label="Ir a un Gran Premio"></nav>
 
-      <div class="lista-gp" id="lista-gp">
-        <p class="cargando" id="cargando">Cargando calendario…</p>
+        <div class="lista-gp" id="lista-gp">
+          <p class="cargando" id="cargando">Cargando calendario…</p>
+        </div>
+
+        <p class="vacio" id="vacio" hidden>No hay fines de semana para este filtro.</p>
       </div>
-
-      <p class="vacio" id="vacio" hidden>No hay fines de semana para este filtro.</p>
     </section>
 
     <!-- ===================== Novedades ===================== -->
@@ -1143,6 +1206,13 @@
         <div>
           <p class="etiqueta">Novedades</p>
           <h2 id="titulo-novedades">Últimos cambios</h2>
+        </div>
+
+        <div class="seccion__acciones">
+          <button class="boton-plegar" type="button" data-plegar="novedades" aria-expanded="true" aria-controls="lista-novedades">
+            <svg class="boton-plegar__icono" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg>
+            <span class="boton-plegar__texto">Ocultar</span>
+          </button>
         </div>
       </div>
 
@@ -1712,6 +1782,86 @@
     }
 
     // ============================================================
+    // Mostrar u ocultar secciones
+    // ============================================================
+    const CLAVE_PLEGADO = 'f1-2026-plegado';
+
+    function leerPlegado() {
+      try {
+        const datos = JSON.parse(localStorage.getItem(CLAVE_PLEGADO) || '{}');
+        return datos && typeof datos === 'object' ? datos : {};
+      } catch {
+        return {};
+      }
+    }
+
+    function guardarPlegado(id, plegado) {
+      try {
+        const estado = leerPlegado();
+        if (plegado) estado[id] = true;
+        else delete estado[id];
+        localStorage.setItem(CLAVE_PLEGADO, JSON.stringify(estado));
+      } catch {
+        // Si el navegador bloquea el almacenamiento, igual se puede plegar.
+      }
+    }
+
+    function aplicarPlegado(id, plegado, guardar = true) {
+      const seccion = document.getElementById(id);
+      const boton = document.querySelector(`[data-plegar="${id}"]`);
+      if (!seccion || !boton) return;
+
+      const cuerpo = document.getElementById(boton.getAttribute('aria-controls'));
+      seccion.dataset.plegado = String(plegado);
+      if (cuerpo) cuerpo.hidden = plegado;
+
+      boton.setAttribute('aria-expanded', String(!plegado));
+      const texto = boton.querySelector('.boton-plegar__texto');
+      if (texto) texto.textContent = plegado ? 'Mostrar' : 'Ocultar';
+
+      const titulo = seccion.querySelector('h2');
+      if (titulo) {
+        boton.setAttribute(
+          'aria-label',
+          `${plegado ? 'Mostrar' : 'Ocultar'} ${titulo.textContent.trim()}`
+        );
+      }
+
+      if (guardar) guardarPlegado(id, plegado);
+    }
+
+    function activarPlegado() {
+      const guardado = leerPlegado();
+
+      document.querySelectorAll('[data-plegar]').forEach((boton) => {
+        const id = boton.dataset.plegar;
+        aplicarPlegado(id, Boolean(guardado[id]), false);
+
+        boton.addEventListener('click', () => {
+          const seccion = document.getElementById(id);
+          const plegado = Boolean(seccion) && seccion.dataset.plegado === 'true';
+          aplicarPlegado(id, !plegado);
+        });
+      });
+
+      // Al usar el menú (o el enlace "saltar"), la sección se vuelve a mostrar.
+      document.addEventListener('click', (evento) => {
+        const enlace = evento.target.closest('a[href^="#"]');
+        if (!enlace) return;
+
+        const id = enlace.getAttribute('href').slice(1);
+        if (document.querySelector(`[data-plegar="${id}"]`)) {
+          aplicarPlegado(id, false);
+        }
+      });
+
+      // Si se entra con #calendario (o similar), se abre esa sección.
+      if (location.hash.length > 1) {
+        aplicarPlegado(location.hash.slice(1), false);
+      }
+    }
+
+    // ============================================================
     // Filtros e instalación
     // ============================================================
     function activarFiltros() {
@@ -1778,6 +1928,7 @@
     // ============================================================
     async function iniciar() {
       actualizarReloj();
+      activarPlegado();
 
       if (location.protocol === 'file:') {
         mostrarError(
