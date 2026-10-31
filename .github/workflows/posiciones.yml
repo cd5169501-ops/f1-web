@@ -1,0 +1,46 @@
+# Actualiza las tablas de pilotos y constructores una vez por semana.
+# Tambien se puede correr a mano desde la pestana Actions.
+
+name: Posiciones
+
+on:
+  schedule:
+    # Todos los lunes a las 12:00 UTC (09:00 en Argentina).
+    - cron: "0 12 * * 1"
+  workflow_dispatch:
+
+# Permiso de escritura solo para este workflow: necesita commitear el JSON.
+permissions:
+  contents: write
+
+concurrency:
+  group: posiciones-f1
+  cancel-in-progress: false
+
+jobs:
+  posiciones:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Consultar la API y actualizar el JSON
+        run: python scripts/posiciones.py
+
+      - name: Guardar cambios en el repositorio
+        run: |
+          # git status tambien detecta el archivo cuando todavia no esta trackeado.
+          if [ -z "$(git status --porcelain -- data/posiciones.json)" ]; then
+            echo "Sin cambios en las posiciones."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/posiciones.json
+          git commit -m "chore(posiciones): actualizar tablas del campeonato"
+          git push

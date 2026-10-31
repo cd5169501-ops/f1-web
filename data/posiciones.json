@@ -1,0 +1,354 @@
+{
+  "temporada": 2026,
+  "ronda": 18,
+  "actualizadoUTC": "2026-10-31T01:31:18Z",
+  "fuente": {
+    "pilotos": "https://api.jolpi.ca/ergast/f1/2026/driverStandings.json",
+    "constructores": "https://api.jolpi.ca/ergast/f1/2026/constructorStandings.json"
+  },
+  "pilotos": [
+    {
+      "posicion": 1,
+      "puntos": 365,
+      "victorias": 9,
+      "codigo": "ANT",
+      "nombre": "Andrea Kimi",
+      "apellido": "Antonelli",
+      "nacionalidad": "Italian",
+      "equipo": "Mercedes",
+      "equipoId": "mercedes"
+    },
+    {
+      "posicion": 2,
+      "puntos": 242,
+      "victorias": 3,
+      "codigo": "RUS",
+      "nombre": "George",
+      "apellido": "Russell",
+      "nacionalidad": "British",
+      "equipo": "Mercedes",
+      "equipoId": "mercedes"
+    },
+    {
+      "posicion": 3,
+      "puntos": 241,
+      "victorias": 1,
+      "codigo": "HAM",
+      "nombre": "Lewis",
+      "apellido": "Hamilton",
+      "nacionalidad": "British",
+      "equipo": "Ferrari",
+      "equipoId": "ferrari"
+    },
+    {
+      "posicion": 4,
+      "puntos": 236,
+      "victorias": 2,
+      "codigo": "VER",
+      "nombre": "Max",
+      "apellido": "Verstappen",
+      "nacionalidad": "Dutch",
+      "equipo": "Red Bull",
+      "equipoId": "red_bull"
+    },
+    {
+      "posicion": 5,
+      "puntos": 233,
+      "victorias": 1,
+      "codigo": "LEC",
+      "nombre": "Charles",
+      "apellido": "Leclerc",
+      "nacionalidad": "Monegasque",
+      "equipo": "Ferrari",
+      "equipoId": "ferrari"
+    },
+    {
+      "posicion": 6,
+      "puntos": 211,
+      "victorias": 2,
+      "codigo": "NOR",
+      "nombre": "Lando",
+      "apellido": "Norris",
+      "nacionalidad": "British",
+      "equipo": "McLaren",
+      "equipoId": "mclaren"
+    },
+    {
+      "posicion": 7,
+      "puntos": 144,
+      "victorias": 0,
+      "codigo": "PIA",
+      "nombre": "Oscar",
+      "apellido": "Piastri",
+      "nacionalidad": "Australian",
+      "equipo": "McLaren",
+      "equipoId": "mclaren"
+    },
+    {
+      "posicion": 8,
+      "puntos": 105,
+      "victorias": 0,
+      "codigo": "HAD",
+      "nombre": "Isack",
+      "apellido": "Hadjar",
+      "nacionalidad": "French",
+      "equipo": "Red Bull",
+      "equipoId": "red_bull"
+    },
+    {
+      "posicion": 9,
+      "puntos": 77,
+      "victorias": 0,
+      "codigo": "LAW",
+      "nombre": "Liam",
+      "apellido": "Lawson",
+      "nacionalidad": "New Zealander",
+      "equipo": "RB F1 Team",
+      "equipoId": "rb"
+    },
+    {
+      "posicion": 10,
+      "puntos": 42,
+      "victorias": 0,
+      "codigo": "GAS",
+      "nombre": "Pierre",
+      "apellido": "Gasly",
+      "nacionalidad": "French",
+      "equipo": "Alpine F1 Team",
+      "equipoId": "alpine"
+    },
+    {
+      "posicion": 11,
+      "puntos": 38,
+      "victorias": 0,
+      "codigo": "LIN",
+      "nombre": "Arvid",
+      "apellido": "Lindblad",
+      "nacionalidad": "British",
+      "equipo": "RB F1 Team",
+      "equipoId": "rb"
+    },
+    {
+      "posicion": 12,
+      "puntos": 27,
+      "victorias": 0,
+      "codigo": "COL",
+      "nombre": "Franco",
+      "apellido": "Colapinto",
+      "nacionalidad": "Argentine",
+      "equipo": "Alpine F1 Team",
+      "equipoId": "alpine"
+    },
+    {
+      "posicion": 13,
+      "puntos": 23,
+      "victorias": 0,
+      "codigo": "BEA",
+      "nombre": "Oliver",
+      "apellido": "Bearman",
+      "nacionalidad": "British",
+      "equipo": "Haas F1 Team",
+      "equipoId": "haas"
+    },
+    {
+      "posicion": 14,
+      "puntos": 13,
+      "victorias": 0,
+      "codigo": "HUL",
+      "nombre": "Nico",
+      "apellido": "Hülkenberg",
+      "nacionalidad": "German",
+      "equipo": "Audi",
+      "equipoId": "audi"
+    },
+    {
+      "posicion": 15,
+      "puntos": 10,
+      "victorias": 0,
+      "codigo": "BOR",
+      "nombre": "Gabriel",
+      "apellido": "Bortoleto",
+      "nacionalidad": "Brazilian",
+      "equipo": "Audi",
+      "equipoId": "audi"
+    },
+    {
+      "posicion": 16,
+      "puntos": 7,
+      "victorias": 0,
+      "codigo": "OCO",
+      "nombre": "Esteban",
+      "apellido": "Ocon",
+      "nacionalidad": "French",
+      "equipo": "Haas F1 Team",
+      "equipoId": "haas"
+    },
+    {
+      "posicion": 17,
+      "puntos": 7,
+      "victorias": 0,
+      "codigo": "ALO",
+      "nombre": "Fernando",
+      "apellido": "Alonso",
+      "nacionalidad": "Spanish",
+      "equipo": "Aston Martin",
+      "equipoId": "aston_martin"
+    },
+    {
+      "posicion": 18,
+      "puntos": 7,
+      "victorias": 0,
+      "codigo": "SAI",
+      "nombre": "Carlos",
+      "apellido": "Sainz",
+      "nacionalidad": "Spanish",
+      "equipo": "Williams",
+      "equipoId": "williams"
+    },
+    {
+      "posicion": 19,
+      "puntos": 5,
+      "victorias": 0,
+      "codigo": "ALB",
+      "nombre": "Alexander",
+      "apellido": "Albon",
+      "nacionalidad": "Thai",
+      "equipo": "Williams",
+      "equipoId": "williams"
+    },
+    {
+      "posicion": 20,
+      "puntos": 1,
+      "victorias": 0,
+      "codigo": "TSU",
+      "nombre": "Yuki",
+      "apellido": "Tsunoda",
+      "nacionalidad": "Japanese",
+      "equipo": "RB F1 Team",
+      "equipoId": "rb"
+    },
+    {
+      "posicion": 21,
+      "puntos": 0,
+      "victorias": 0,
+      "codigo": "STR",
+      "nombre": "Lance",
+      "apellido": "Stroll",
+      "nacionalidad": "Canadian",
+      "equipo": "Aston Martin",
+      "equipoId": "aston_martin"
+    },
+    {
+      "posicion": 22,
+      "puntos": 0,
+      "victorias": 0,
+      "codigo": "BOT",
+      "nombre": "Valtteri",
+      "apellido": "Bottas",
+      "nacionalidad": "Finnish",
+      "equipo": "Cadillac F1 Team",
+      "equipoId": "cadillac"
+    },
+    {
+      "posicion": 23,
+      "puntos": 0,
+      "victorias": 0,
+      "codigo": "PER",
+      "nombre": "Sergio",
+      "apellido": "Pérez",
+      "nacionalidad": "Mexican",
+      "equipo": "Cadillac F1 Team",
+      "equipoId": "cadillac"
+    }
+  ],
+  "constructores": [
+    {
+      "posicion": 1,
+      "puntos": 607,
+      "victorias": 12,
+      "nombre": "Mercedes",
+      "id": "mercedes",
+      "nacionalidad": "German"
+    },
+    {
+      "posicion": 2,
+      "puntos": 474,
+      "victorias": 2,
+      "nombre": "Ferrari",
+      "id": "ferrari",
+      "nacionalidad": "Italian"
+    },
+    {
+      "posicion": 3,
+      "puntos": 355,
+      "victorias": 2,
+      "nombre": "Red Bull",
+      "id": "red_bull",
+      "nacionalidad": "Austrian"
+    },
+    {
+      "posicion": 4,
+      "puntos": 355,
+      "victorias": 2,
+      "nombre": "McLaren",
+      "id": "mclaren",
+      "nacionalidad": "British"
+    },
+    {
+      "posicion": 5,
+      "puntos": 102,
+      "victorias": 0,
+      "nombre": "RB F1 Team",
+      "id": "rb",
+      "nacionalidad": "Italian"
+    },
+    {
+      "posicion": 6,
+      "puntos": 69,
+      "victorias": 0,
+      "nombre": "Alpine F1 Team",
+      "id": "alpine",
+      "nacionalidad": "French"
+    },
+    {
+      "posicion": 7,
+      "puntos": 30,
+      "victorias": 0,
+      "nombre": "Haas F1 Team",
+      "id": "haas",
+      "nacionalidad": "American"
+    },
+    {
+      "posicion": 8,
+      "puntos": 23,
+      "victorias": 0,
+      "nombre": "Audi",
+      "id": "audi",
+      "nacionalidad": "German"
+    },
+    {
+      "posicion": 9,
+      "puntos": 12,
+      "victorias": 0,
+      "nombre": "Williams",
+      "id": "williams",
+      "nacionalidad": "British"
+    },
+    {
+      "posicion": 10,
+      "puntos": 7,
+      "victorias": 0,
+      "nombre": "Aston Martin",
+      "id": "aston_martin",
+      "nacionalidad": "British"
+    },
+    {
+      "posicion": 11,
+      "puntos": 0,
+      "victorias": 0,
+      "nombre": "Cadillac F1 Team",
+      "id": "cadillac",
+      "nacionalidad": "American"
+    }
+  ]
+}

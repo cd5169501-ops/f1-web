@@ -1,13 +1,14 @@
 // Service worker mínimo para que la app se pueda instalar y abra sin conexión.
 // Los datos se piden primero a la red para no quedar con horarios viejos.
 
-const CACHE = 'f1-2026-v1';
+const CACHE = 'f1-2026-v2';
 const ARCHIVOS_BASE = [
   './',
   './index.html',
   './manifest.json',
   './data/temporada-2026.json',
   './data/novedades.json',
+  './data/posiciones.json',
   './icons/icon-192.png',
   './icons/icon-512.png'
 ];

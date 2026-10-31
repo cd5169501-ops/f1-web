@@ -20,13 +20,16 @@ Hecha con HTML, CSS y JavaScript vanilla. Sin frameworks, sin build y sin costo.
 ├── data/
 │   ├── temporada-2026.json     # Calendario y horarios en UTC
 │   ├── novedades.json          # Novedades con fecha y texto corto
+│   ├── posiciones.json         # Tablas de pilotos y constructores
 │   └── avisos_enviados.json    # Registro de avisos ya enviados
 ├── scripts/
 │   ├── validar_datos.py        # Validación del JSON antes de publicar
-│   └── avisos.py               # Detección de sesiones y envío por ntfy
+│   ├── avisos.py               # Detección de sesiones y envío por ntfy
+│   └── posiciones.py           # Descarga las tablas del campeonato
 └── .github/
     └── workflows/
-        └── avisos.yml          # Ejecuta avisos.py cada 5 minutos
+        ├── avisos.yml          # Ejecuta avisos.py cada 5 minutos
+        └── posiciones.yml      # Actualiza las tablas los lunes
 ```
 
 ## Ver la web en local
@@ -78,6 +81,28 @@ Si encuentra errores, termina con código 1 (sirve para usarlo en CI).
 
 > Los horarios pueden cambiar por decisión de la FIA o del promotor. La web
 > enlaza a la fuente oficial de cada fecha.
+
+## Posiciones del campeonato
+
+La sección **Posiciones** de la web lee `data/posiciones.json`, que se genera
+con:
+
+```bash
+python scripts/posiciones.py
+```
+
+El script consulta la API pública de
+[Jolpica F1](https://github.com/jolpica/jolpica-f1) (compatible con Ergast),
+guarda pilotos y constructores con puntos y victorias, y anota la fecha de
+actualización en UTC. Si la consulta falla, deja el archivo anterior intacto y
+termina con código 1.
+
+El workflow `.github/workflows/posiciones.yml` lo ejecuta **todos los lunes a
+las 12:00 UTC** (09:00 en Argentina) y commitea el JSON solo si cambió. También
+se puede correr a mano desde **Actions → Posiciones → Run workflow**.
+
+> Las tablas se actualizan una vez por semana: después de cada carrera pueden
+> quedar desactualizadas hasta el lunes siguiente.
 
 ## Deploy en GitHub Pages
 

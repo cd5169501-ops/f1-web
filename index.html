@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>F1 Calendario 2026 · Hora argentina</title>
-  <meta name="description" content="Todas las sesiones de la temporada 2026 de Fórmula 1: prácticas, clasificación y carrera, en hora argentina. Con cuenta regresiva y estado en vivo.">
+  <meta name="description" content="Todas las sesiones de la temporada 2026 de Fórmula 1: prácticas, clasificación y carrera, en hora argentina. Con cuenta regresiva, estado en vivo y posiciones del campeonato.">
   <meta name="theme-color" content="#e10600">
 
   <!-- PWA -->
@@ -778,6 +778,89 @@
     }
 
     /* ============================================================
+       Posiciones
+       ============================================================ */
+    .posiciones {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .tabla-panel {
+      min-width: 0;
+      padding: 16px 16px 6px;
+      border: 1px solid var(--borde-suave);
+      border-radius: var(--radio);
+      background: var(--panel);
+    }
+
+    .tabla-panel h3 {
+      margin: 0 0 10px;
+      font-size: .95rem;
+      font-weight: 750;
+    }
+
+    .tabla-scroll { overflow-x: auto; }
+
+    .tabla {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .84rem;
+    }
+
+    .tabla th {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--borde);
+      color: var(--tenue);
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-align: left;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .tabla td {
+      padding: 7px 8px;
+      border-bottom: 1px solid var(--borde-suave);
+      vertical-align: middle;
+    }
+
+    .tabla tbody tr:last-child td { border-bottom: 0; }
+
+    .tabla .num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .tabla .pos {
+      width: 1%;
+      color: var(--tenue);
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .tabla tbody tr:first-child .pos {
+      color: var(--rojo-claro);
+      font-weight: 800;
+    }
+
+    .tabla__nombre { font-weight: 650; }
+
+    .tabla__equipo {
+      display: block;
+      color: var(--tenue);
+      font-size: .7rem;
+      line-height: 1.35;
+    }
+
+    .tabla__vacio {
+      padding: 18px 8px;
+      color: var(--tenue);
+      text-align: center;
+    }
+
+    /* ============================================================
        Novedades
        ============================================================ */
     .novedades {
@@ -889,6 +972,8 @@
       .filtros { width: 100%; }
       .filtros button { flex: 1; padding-inline: 8px; }
 
+      .posiciones { grid-template-columns: 1fr; }
+
       .proxima { padding: 18px; border-radius: 18px; }
       .cuenta__bloque { padding: 9px 4px; }
       .cuenta__bloque span { font-size: 1.45rem; }
@@ -951,6 +1036,7 @@
       </a>
 
       <nav class="nav" aria-label="Secciones">
+        <a href="#posiciones">Posiciones</a>
         <a href="#calendario">Calendario</a>
         <a href="#novedades">Novedades</a>
       </nav>
@@ -1011,6 +1097,21 @@
       <p class="sr-only" id="anuncio" aria-live="polite"></p>
     </div>
 
+    <!-- ===================== Posiciones ===================== -->
+    <section class="seccion contenedor" id="posiciones" aria-labelledby="titulo-posiciones">
+      <div class="seccion__cab">
+        <div>
+          <p class="etiqueta">Campeonato</p>
+          <h2 id="titulo-posiciones">Posiciones</h2>
+          <p class="nota-datos" id="posiciones-fecha">Cargando posiciones…</p>
+        </div>
+      </div>
+
+      <div class="posiciones" id="lista-posiciones">
+        <p class="cargando">Cargando posiciones…</p>
+      </div>
+    </section>
+
     <!-- ===================== Calendario ===================== -->
     <section class="seccion contenedor" id="calendario" aria-labelledby="titulo-calendario">
       <div class="seccion__cab">
@@ -1061,6 +1162,8 @@
         <a href="https://github.com/sportstimes/f1" target="_blank" rel="noopener">Fuente de horarios</a>
         ·
         <a href="https://www.formula1.com/en/racing/2026" target="_blank" rel="noopener">Calendario oficial</a>
+        ·
+        <a href="https://github.com/jolpica/jolpica-f1" target="_blank" rel="noopener">Posiciones (Jolpica F1)</a>
       </p>
     </div>
   </footer>
@@ -1112,6 +1215,7 @@
     const fmtPartes = new Intl.DateTimeFormat('es-AR', {
       timeZone: ZONA, day: 'numeric', month: 'short'
     });
+    const fmtPuntos = new Intl.NumberFormat('es-AR', { maximumFractionDigits: 1 });
 
     // ============================================================
     // Utilidades
@@ -1445,6 +1549,75 @@
     }
 
     // ============================================================
+    // Render: posiciones del campeonato
+    // ============================================================
+    function htmlTablaPosiciones(titulo, lista, esPiloto, id) {
+      const filas = lista.map((item) => {
+        const nombre = esPiloto
+          ? `${item.nombre || ''} ${item.apellido || ''}`.trim()
+          : (item.nombre || '');
+        const equipo = esPiloto && item.equipo
+          ? `<span class="tabla__equipo">${esc(item.equipo)}</span>`
+          : '';
+
+        return `
+          <tr>
+            <td class="pos">${esc(item.posicion ?? '—')}</td>
+            <td><span class="tabla__nombre">${esc(nombre || '—')}</span>${equipo}</td>
+            <td class="num">${fmtPuntos.format(Number(item.puntos) || 0)}</td>
+            <td class="num">${esc(item.victorias ?? 0)}</td>
+          </tr>
+        `;
+      }).join('');
+
+      return `
+        <section class="tabla-panel" aria-labelledby="${id}">
+          <h3 id="${id}">${esc(titulo)}</h3>
+          <div class="tabla-scroll">
+            <table class="tabla">
+              <thead>
+                <tr>
+                  <th scope="col" class="pos">#</th>
+                  <th scope="col">${esPiloto ? 'Piloto' : 'Equipo'}</th>
+                  <th scope="col" class="num">Pts</th>
+                  <th scope="col" class="num">Vict.</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${filas || '<tr><td colspan="4" class="tabla__vacio">Sin datos.</td></tr>'}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderPosiciones(datos) {
+      const contenedor = $('lista-posiciones');
+      const nota = $('posiciones-fecha');
+
+      if (!datos || !Array.isArray(datos.pilotos) || !Array.isArray(datos.constructores)) {
+        contenedor.innerHTML = '<p class="cargando">No se pudieron cargar las posiciones.</p>';
+        nota.textContent = 'Se actualizan una vez por semana.';
+        return;
+      }
+
+      const fecha = datos.actualizadoUTC ? new Date(datos.actualizadoUTC) : null;
+      const ronda = Number(datos.ronda) > 0 ? ` · Ronda ${datos.ronda}` : '';
+
+      if (fecha && !Number.isNaN(fecha.getTime())) {
+        nota.textContent = `Actualizado ${limpiar(fmtDiaLargo.format(fecha))} ` +
+          `a las ${horaCorta(fecha.getTime())} (hora argentina)${ronda}.`;
+      } else {
+        nota.textContent = 'Sin fecha de actualización.';
+      }
+
+      contenedor.innerHTML =
+        htmlTablaPosiciones('Pilotos', datos.pilotos, true, 'tabla-pilotos') +
+        htmlTablaPosiciones('Constructores', datos.constructores, false, 'tabla-constructores');
+    }
+
+    // ============================================================
     // Render: novedades y estadísticas
     // ============================================================
     function renderNovedades(datos) {
@@ -1615,15 +1788,17 @@
       }
 
       try {
-        const [datosTemporada, datosNovedades] = await Promise.all([
+        const [datosTemporada, datosNovedades, datosPosiciones] = await Promise.all([
           cargarJSON('data/temporada-2026.json'),
-          cargarJSON('data/novedades.json').catch(() => null)
+          cargarJSON('data/novedades.json').catch(() => null),
+          cargarJSON('data/posiciones.json').catch(() => null)
         ]);
 
         const preparados = prepararDatos(datosTemporada);
         carreras = preparados.carreras;
         sesiones = preparados.sesiones;
 
+        renderPosiciones(datosPosiciones);
         renderNovedades(datosNovedades);
         renderTodo();
 
