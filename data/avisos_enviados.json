@@ -1,4 +1,8 @@
 {
-  "actualizadoUTC": null,
-  "avisos": {}
+  "actualizadoUTC": "2026-11-07T14:24:22Z",
+  "avisos": {
+    "2026-r20-FP3-2026-11-07T14:30:00Z": {
+      "ntfy": "2026-11-07T14:24:22Z"
+    }
+  }
 }
