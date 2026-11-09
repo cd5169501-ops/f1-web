@@ -1,7 +1,7 @@
 {
   "temporada": 2026,
-  "ronda": 19,
-  "actualizadoUTC": "2026-11-02T21:22:30Z",
+  "ronda": 20,
+  "actualizadoUTC": "2026-11-09T21:54:20Z",
   "fuente": {
     "pilotos": "https://api.jolpi.ca/ergast/f1/2026/driverStandings.json",
     "constructores": "https://api.jolpi.ca/ergast/f1/2026/constructorStandings.json"
@@ -9,7 +9,7 @@
   "pilotos": [
     {
       "posicion": 1,
-      "puntos": 380,
+      "puntos": 390,
       "victorias": 9,
       "codigo": "ANT",
       "nombre": "Andrea Kimi",
@@ -20,7 +20,7 @@
     },
     {
       "posicion": 2,
-      "puntos": 261,
+      "puntos": 279,
       "victorias": 3,
       "codigo": "VER",
       "nombre": "Max",
@@ -31,18 +31,7 @@
     },
     {
       "posicion": 3,
-      "puntos": 259,
-      "victorias": 1,
-      "codigo": "HAM",
-      "nombre": "Lewis",
-      "apellido": "Hamilton",
-      "nacionalidad": "British",
-      "equipo": "Ferrari",
-      "equipoId": "ferrari"
-    },
-    {
-      "posicion": 4,
-      "puntos": 250,
+      "puntos": 262,
       "victorias": 3,
       "codigo": "RUS",
       "nombre": "George",
@@ -52,8 +41,19 @@
       "equipoId": "mercedes"
     },
     {
+      "posicion": 4,
+      "puntos": 261,
+      "victorias": 1,
+      "codigo": "HAM",
+      "nombre": "Lewis",
+      "apellido": "Hamilton",
+      "nacionalidad": "British",
+      "equipo": "Ferrari",
+      "equipoId": "ferrari"
+    },
+    {
       "posicion": 5,
-      "puntos": 245,
+      "puntos": 249,
       "victorias": 1,
       "codigo": "LEC",
       "nombre": "Charles",
@@ -64,8 +64,8 @@
     },
     {
       "posicion": 6,
-      "puntos": 221,
-      "victorias": 2,
+      "puntos": 246,
+      "victorias": 3,
       "codigo": "NOR",
       "nombre": "Lando",
       "apellido": "Norris",
@@ -75,7 +75,7 @@
     },
     {
       "posicion": 7,
-      "puntos": 144,
+      "puntos": 152,
       "victorias": 0,
       "codigo": "PIA",
       "nombre": "Oscar",
@@ -86,7 +86,7 @@
     },
     {
       "posicion": 8,
-      "puntos": 107,
+      "puntos": 122,
       "victorias": 0,
       "codigo": "HAD",
       "nombre": "Isack",
@@ -97,7 +97,7 @@
     },
     {
       "posicion": 9,
-      "puntos": 83,
+      "puntos": 89,
       "victorias": 0,
       "codigo": "LAW",
       "nombre": "Liam",
@@ -163,7 +163,7 @@
     },
     {
       "posicion": 15,
-      "puntos": 13,
+      "puntos": 14,
       "victorias": 0,
       "codigo": "HUL",
       "nombre": "Nico",
@@ -270,12 +270,23 @@
       "nacionalidad": "Mexican",
       "equipo": "Cadillac F1 Team",
       "equipoId": "cadillac"
+    },
+    {
+      "posicion": 25,
+      "puntos": 0,
+      "victorias": 0,
+      "codigo": "",
+      "nombre": "Rafael",
+      "apellido": "Camara",
+      "nacionalidad": "",
+      "equipo": "Haas F1 Team",
+      "equipoId": "haas"
     }
   ],
   "constructores": [
     {
       "posicion": 1,
-      "puntos": 630,
+      "puntos": 652,
       "victorias": 12,
       "nombre": "Mercedes",
       "id": "mercedes",
@@ -283,7 +294,7 @@
     },
     {
       "posicion": 2,
-      "puntos": 504,
+      "puntos": 510,
       "victorias": 2,
       "nombre": "Ferrari",
       "id": "ferrari",
@@ -291,7 +302,7 @@
     },
     {
       "posicion": 3,
-      "puntos": 382,
+      "puntos": 415,
       "victorias": 3,
       "nombre": "Red Bull",
       "id": "red_bull",
@@ -299,15 +310,15 @@
     },
     {
       "posicion": 4,
-      "puntos": 365,
-      "victorias": 2,
+      "puntos": 398,
+      "victorias": 3,
       "nombre": "McLaren",
       "id": "mclaren",
       "nacionalidad": "British"
     },
     {
       "posicion": 5,
-      "puntos": 108,
+      "puntos": 114,
       "victorias": 0,
       "nombre": "RB F1 Team",
       "id": "rb",
@@ -331,7 +342,7 @@
     },
     {
       "posicion": 8,
-      "puntos": 27,
+      "puntos": 28,
       "victorias": 0,
       "nombre": "Audi",
       "id": "audi",
