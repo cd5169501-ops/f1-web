@@ -1,7 +1,7 @@
 {
   "temporada": 2026,
   "ronda": 20,
-  "actualizadoUTC": "2026-11-09T21:54:20Z",
+  "actualizadoUTC": "2026-11-16T21:37:34Z",
   "fuente": {
     "pilotos": "https://api.jolpi.ca/ergast/f1/2026/driverStandings.json",
     "constructores": "https://api.jolpi.ca/ergast/f1/2026/constructorStandings.json"
@@ -275,10 +275,10 @@
       "posicion": 25,
       "puntos": 0,
       "victorias": 0,
-      "codigo": "",
+      "codigo": "CAM",
       "nombre": "Rafael",
       "apellido": "Camara",
-      "nacionalidad": "",
+      "nacionalidad": "Brazilian",
       "equipo": "Haas F1 Team",
       "equipoId": "haas"
     }
